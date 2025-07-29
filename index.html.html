@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musthafa DM | Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+      color: #333;
+      display: flex;
+      overflow-x: hidden;
+    }
+    aside {
+      background: #002244;
+      color: white;
+      width: 250px;
+      padding: 40px 20px;
+      min-height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      animation: slideInLeft 1s ease-out;
+    }
+    main {
+      margin-left: 250px;
+      padding: 40px 30px;
+      width: 100%;
+      animation: fadeIn 1.2s ease-in;
+    }
+    aside h1 {
+      font-size: 1.8em;
+      margin-bottom: 5px;
+    }
+    aside p {
+      font-size: 0.95em;
+      margin: 10px 0 30px;
+    }
+    aside a {
+      color: #7ec8e3;
+      text-decoration: none;
+      display: block;
+      margin: 8px 0;
+      transition: all 0.3s ease;
+    }
+    aside a:hover {
+      padding-left: 5px;
+      color: #ffffff;
+    }
+    h2 {
+      color: #00416a;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .project {
+      background: white;
+      border-left: 5px solid #00416a;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    .button {
+      background-color: #00416a;
+      color: white;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background-color: #0066cc;
+    }
+    footer {
+      background: #002244;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-left: 250px;
+    }
+    @media(max-width: 768px) {
+      aside {
+        position: relative;
+        width: 100%;
+        text-align: center;
+      }
+      main {
+        margin-left: 0;
+        padding: 20px;
+      }
+      footer {
+        margin-left: 0;
+      }
+    }
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <h1>Musthafa DM</h1>
+    <p>Entry-Level Software Developer<br>Web Developer | IT Support</p>
+    <a href="mailto:musthafadm02@gmail.com">📧 Email</a>
+    <a href="https://linkedin.com/in/musthafa-dm-b39b83217" target="_blank">🔗 LinkedIn</a>
+    <a href="https://github.com/musthafa-dm" target="_blank">💻 GitHub</a>
+    <a href="Musthafa_Resume_Final_Color.docx" download>📄 Download Resume</a>
+  </aside>
+
+  <main>
+    <div class="section">
+      <h2>About Me</h2>
+      <p>I am a motivated BCA student passionate about software development, web design, and IT support. I enjoy learning and building real-world applications.</p>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Online Library Management System</h3>
+        <p>Built using PHP & MySQL. Allows students to borrow and return books online.</p>
+        <a href="https://github.com/musthafa-dm/OnlineLibrarySystem" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Hotel Management System</h3>
+        <p>Python CLI app for room bookings and billing using file handling.</p>
+        <a href="https://github.com/musthafa-dm/Hotel-Management-System" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Student Result Management System</h3>
+        <p>Simple HTML, CSS, and PHP portal for students to view exam results.</p>
+        <a href="https://github.com/musthafa-dm/StudentResultManagementSystem" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>If you'd like to collaborate or have opportunities, feel free to reach out via email or LinkedIn!</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Musthafa DM. All rights reserved.</p>
+  </footer>
+</body>
+</html>
