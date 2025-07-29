@@ -5,19 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Musthafa DM | Portfolio</title>
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg-color: #f4f6f9;
+      --text-color: #333;
+      --aside-bg: #002244;
+      --link-color: #7ec8e3;
+      --hover-color: #ffffff;
+      --main-accent: #00416a;
+      --card-bg: #ffffff;
     }
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --aside-bg: #1e1e2f;
+      --link-color: #84d1ff;
+      --hover-color: #fff;
+      --main-accent: #3399ff;
+      --card-bg: #1e1e2f;
+    }
+    * { box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f4f6f9;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
       display: flex;
       overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
     }
     aside {
-      background: #002244;
+      background: var(--aside-bg);
       color: white;
       width: 250px;
       padding: 40px 20px;
@@ -25,69 +42,57 @@
       position: fixed;
       left: 0;
       top: 0;
-      animation: slideInLeft 1s ease-out;
     }
     main {
       margin-left: 250px;
       padding: 40px 30px;
       width: 100%;
-      animation: fadeIn 1.2s ease-in;
     }
-    aside h1 {
-      font-size: 1.8em;
-      margin-bottom: 5px;
-    }
-    aside p {
-      font-size: 0.95em;
-      margin: 10px 0 30px;
-    }
+    aside h1 { font-size: 1.8em; margin-bottom: 5px; }
+    aside p { font-size: 0.95em; margin: 10px 0 30px; }
     aside a {
-      color: #7ec8e3;
+      color: var(--link-color);
       text-decoration: none;
       display: block;
       margin: 8px 0;
       transition: all 0.3s ease;
     }
-    aside a:hover {
-      padding-left: 5px;
-      color: #ffffff;
-    }
+    aside a:hover { padding-left: 5px; color: var(--hover-color); }
     h2 {
-      color: #00416a;
+      color: var(--main-accent);
       margin-bottom: 10px;
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
     }
-    .section {
-      margin-bottom: 40px;
-    }
+    .section { margin-bottom: 40px; }
     .project {
-      background: white;
-      border-left: 5px solid #00416a;
+      background: var(--card-bg);
+      border-left: 5px solid var(--main-accent);
       padding: 15px 20px;
       margin: 20px 0;
       border-radius: 5px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .project:hover {
-      transform: translateY(-5px);
     }
     .button {
-      background-color: #00416a;
+      background-color: var(--main-accent);
       color: white;
       padding: 10px 20px;
-      display: inline-block;
       border-radius: 5px;
       text-decoration: none;
       margin-top: 10px;
-      transition: background 0.3s ease;
     }
-    .button:hover {
-      background-color: #0066cc;
+    .dark-toggle {
+      margin-top: 20px;
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
     }
     footer {
-      background: #002244;
+      background: var(--aside-bg);
       color: white;
       text-align: center;
       padding: 20px;
@@ -99,29 +104,8 @@
         width: 100%;
         text-align: center;
       }
-      main {
-        margin-left: 0;
-        padding: 20px;
-      }
-      footer {
-        margin-left: 0;
-      }
-    }
-    @keyframes slideInLeft {
-      from {
-        transform: translateX(-100%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      main { margin-left: 0; padding: 20px; }
+      footer { margin-left: 0; }
     }
   </style>
 </head>
@@ -133,14 +117,28 @@
     <a href="https://linkedin.com/in/musthafa-dm-b39b83217" target="_blank">🔗 LinkedIn</a>
     <a href="https://github.com/musthafa-dm" target="_blank">💻 GitHub</a>
     <a href="Musthafa_Resume.pdf" download="Musthafa_Resume.pdf">📄 Download Resume</a>
+    <div class="dark-toggle" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</div>
+    <img src="profile.jpg" alt="Musthafa DM" style="width:100px;height:100px;border-radius:50%;margin:20px auto;display:block;object-fit:cover;">
   </aside>
-
   <main>
     <div class="section">
-      <h2>About Me</h2>
-      <p>I am a motivated BCA student passionate about software development, web design, and IT support. I enjoy learning and building real-world applications.</p>
+      <h2>Career Objective</h2>
+      <div class="project">
+        <p>Seeking a growth-oriented software development role where I can apply my technical skills, contribute to impactful solutions, and evolve continuously alongside an inspiring team.</p>
+      </div>
     </div>
-
+    <div class="section">
+      <h2>About Me</h2>
+      <div class="project">
+        <p>Hi, I’m Musthafa — a tech enthusiast with a passion for crafting clean, user-focused software. With a strong foundation in web and backend technologies, I enjoy turning ideas into impactful digital solutions. My journey is driven by curiosity, creativity, and the goal to build things that truly matter.</p>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Why Hire Me?</h2>
+      <div class="project">
+        <p>I’m not just another fresher — I’m someone who delivers. With real project experience and a hunger to learn, I offer a solid foundation in software development, clean code practices, and a strong work ethic. I'm ready to grow with your team and make a difference from day one.</p>
+      </div>
+    </div>
     <div class="section">
       <h2>Projects</h2>
       <div class="project">
@@ -161,13 +159,86 @@
     </div>
 
     <div class="section">
+      <h2>Skills</h2>
+      <div class="project">
+        <p><strong>Python</strong></p>
+        <div style="background:#ccc;width:100%;border-radius:4px;height:10px;overflow:hidden;"><div style="width:90%;background:#00416a;height:10px;"></div></div>
+        <p><strong>PHP</strong></p>
+        <div style="background:#ccc;width:100%;border-radius:4px;height:10px;overflow:hidden;"><div style="width:85%;background:#00416a;height:10px;"></div></div>
+        <p><strong>SQL</strong></p>
+        <div style="background:#ccc;width:100%;border-radius:4px;height:10px;overflow:hidden;"><div style="width:80%;background:#00416a;height:10px;"></div></div>
+        <p><strong>HTML/CSS</strong></p>
+        <div style="background:#ccc;width:100%;border-radius:4px;height:10px;overflow:hidden;"><div style="width:75%;background:#00416a;height:10px;"></div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Education & Certifications</h2>
+      <div class="project">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p>Saraladevi Satishchandra Agarwal Government First Grade College, Ballari – 2025</p>
+      </div>
+      <div class="project">
+        <h3>Certifications</h3>
+        <ul>
+          <li>SoloLearn Python Certificate</li>
+          <li>SoloLearn PHP Certificate</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Languages & Interests</h2>
+      <div class="project">
+        <p><strong>Languages:</strong> English, Hindi, Kannada, Telugu</p>
+        <p><strong>Interests:</strong> Coding, UI/UX Design, Blogging, Learning New Technologies</p>
+      </div>
+    </div>
+
+    <div class="section">
+  <h2>Personal Strengths</h2>
+  <div class="project">
+    <ul>
+      <li>Quick learner with strong problem-solving skills</li>
+      <li>Dedicated to writing clean, maintainable code</li>
+      <li>Great team collaborator with a positive attitude</li>
+      <li>Continuously exploring new technologies and frameworks</li>
+    </ul>
+  </div>
+</div>
+      <div class="project">
+        <blockquote>
+          <p>“Working with Musthafa was inspiring. He consistently delivers clean code and creative solutions.”</p>
+          <footer>– Classmate, Final Year BCA</footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="section">
       <h2>Contact</h2>
-      <p>If you'd like to collaborate or have opportunities, feel free to reach out via email or LinkedIn!</p>
+      <form action="https://formspree.io/f/mwkgyyba" method="POST">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" required style="width:100%;padding:8px;margin:5px 0 15px;"><br>
+
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required style="width:100%;padding:8px;margin:5px 0 15px;"><br>
+
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="5" required style="width:100%;padding:8px;margin:5px 0 15px;"></textarea><br>
+
+        <button type="submit" class="button">Send Message</button>
+      </form>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Musthafa DM. All rights reserved.</p>
+    <p>© 2025 Musthafa DM. All rights reserved. | Last updated: July 29, 2025</p>
   </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
